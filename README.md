@@ -1,9 +1,9 @@
 # EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE :
-# NAME :
-# ROLLNUMBER :
-# DEPARTMENT
+# DATE :03.03.24
+# NAME :B.SANDHIYA SREE
+# ROLLNUMBER :212223220093
+# DEPARTMENT:INFORMATION TECHNOLOGY
 ## AIM: 
 To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
  
@@ -47,21 +47,31 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 ****Where R= 1KΩ in this experiment 
 ****That is, the voltage is proportional to the inverse of the FSR resistance.
-
-
-
-
-
-
-
-
-
-
 ![image](https://user-images.githubusercontent.com/36288975/163532979-a2a5cb5c-f495-442c-843e-bebb82737a35.png)
+
+![Screenshot 2024-03-03 130545](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151395890/3c94e62f-34f8-4997-8c4d-c0995c36be7c)
+
+GRAPH:
+![Screenshot 2024-03-03 130809](https://github.com/vasanthkumarch/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151395890/ebe3aa7e-f5f1-4da2-8dea-784abebb942d)
+
+
+
+
+
+
+
+
+
 
 
 
 ### FIGURE-03 CIRCUIT DIAGRAM
+
+![Screenshot 2024-03-03 130809]
+
+
+[Epic Luulia (1).pdf]
+
 
 
 
@@ -79,10 +89,38 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
- 
+ *your roll no :212223220093
+ * your name :B.SANDHIYA SREE
+ * department and year :1 ST YEAR & INFORMATION TECHNOLOGY
+ * ```int fsr;
+int LED= 7;
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  fsr=analogRead(A0);
+  Serial.print("raw value=");
+  Serial.println(fsr);
+  delay(1000);
+  float m;
+  m = map(fsr,0,159,0,10);
+  Serial.print("mapped value");
+  Serial.println(m);
+  delay(1000);
+  
+if (m>5);
+  {
+    digitalWrite(LED,HIGH);
+      delay(500);
+    digitalWrite(LED,LOW);
+      delay(500);
+  }
+}```
+
  
  
  
