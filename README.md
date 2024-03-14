@@ -76,9 +76,37 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
+ *your roll no :212223220093
+ * your name :B.SANDHIYA SREE
+ * department and year :INFORMATION TECHNOLOGY(1 YEAR)
+ * int fsr;
+int LED= 7;
+void setup()
+{
+  pinMode(LED, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  fsr=analogRead(A0);
+  Serial.print("raw value=");
+  Serial.println(fsr);
+  delay(1000);
+  float m;
+  m = map(fsr,0,159,0,10);
+  Serial.print("mapped value");
+  Serial.println(m);
+  delay(1000);
+  
+if (m>5);
+  {
+    digitalWrite(LED,HIGH);
+      delay(500);
+    digitalWrite(LED,LOW);
+      delay(500);
+  }
+}
  
  
  
@@ -99,6 +127,21 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### TABLE -02 standard deviation table 
+![Screenshot 2024-03-14 223605](https://github.com/Sandhniya/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151395890/55558295-4914-4463-810d-2476c024cfa3)
+GRAPH:
+
+![Screenshot 2024-03-14 223614](https://github.com/Sandhniya/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151395890/7dbe027c-6ec7-4b1c-8010-1a64a32144c8)
+
+CIRCUIT DIAGRAM:
+
+![Screenshot 2024-03-14 224233](https://github.com/Sandhniya/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151395890/15b8d39e-7023-49ee-8ad8-64a6d1037d15)
+
+SCHESMATIC DIAGRAM:
+
+![Screenshot 2024-03-14 224249](https://github.com/Sandhniya/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/151395890/705b9028-b2bd-413a-a6e6-a3f6df821c50)
+
+
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
